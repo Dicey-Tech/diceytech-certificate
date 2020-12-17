@@ -1,0 +1,85 @@
+<!--%namespace name='static' file='/static_content.html'/>
+<%! from django.utils.translation import ugettext as _%>
+<%
+from django.utils.translation import get_language_bidi
+dir_rtl = 'rtl' if get_language_bidi() else 'ltr'
+course_mode_class = course_mode if course_mode else ''
+%-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>${document_title}</title>
+
+    <!-- %static:css group='style-certificates'/-->
+    <link rel="stylesheet" href="certificate.css">
+    <!-- ${static.certificate_asset_url('certificate-styles')} -->
+  </head>
+
+  <body class="some-class">
+    <!-- div class="cert-header">
+      <img src="${static.certificate_asset_url('header')}" class="certificate-header"/>
+    </div-->
+
+    <div class="wrapper-accomplishment-rendering">
+        <div class="accomplishment-rendering gradient-box">
+            <span class="deco-corner deco-corner-tl"></span>
+            <span class="deco-corner deco-corner-tr"></span>
+            <span class="deco-corner deco-corner-bl"></span>
+            <span class="deco-corner deco-corner-br"></span>
+            
+            <div class="inner-box">
+                       
+                <figure class="bg-decoration z-index-1" aria-hidden="true">
+                    <svg class="bg-decoration__svg color-contrast-low" viewBox="0 0 1920 450" fill="none">
+                      <circle class="blend-overlay" opacity="0.5" cx="1745" cy="159" r="175" fill="url(#bg-decoration-v1-fx-4-radial-1)" />
+                      <circle opacity="0.5" r="65" transform="matrix(-1 0 0 1 240 110)" fill="url(#bg-decoration-v1-fx-4-radial-2)" />
+                      <g opacity="0.5" filter="url(#bg-decoration-v1-fx-4-filter-1)">
+                          <circle r="26" transform="matrix(-1 0 0 1 298 386)" fill="#d9167e" />
+                      </g>
+                      <circle class="blend-overlay" opacity="0.5" cx="1470" cy="-299" r="439" fill="url(#bg-decoration-v1-fx-4-radial-3)" />
+                      <defs>
+                          <filter id="bg-decoration-v1-fx-4-filter-1" x="267" y="355" width="62" height="62" filterUnits="userSpaceOnUse"
+                          color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                            <feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+                          </filter>
+                          <radialGradient id="bg-decoration-v1-fx-4-radial-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                          gradientTransform="translate(1745 159) rotate(90) scale(175)">
+                            <stop stop-color="#d9167e" stop-opacity="0" />
+                            <stop offset="1" stop-color="#d9167e" />
+                          </radialGradient>
+                          <radialGradient id="bg-decoration-v1-fx-4-radial-2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="scale(65)">
+                            <stop stop-color="#0f7087" stop-opacity="0"/>
+                            <stop offset="1" stop-color="#0f7087"/>
+                          </radialGradient>
+                          <radialGradient id="bg-decoration-v1-fx-4-radial-3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                          gradientTransform="translate(1470 -299) rotate(90) scale(439)">
+                            <stop stop-color="#0f7087" stop-opacity="0" />
+                            <stop offset="1" stop-color="#0f7087" />
+                          </radialGradient>
+                      </defs>
+                    </svg>
+                </figure>
+
+
+                <p class="some-other-class">
+                  <span>
+                    This is to certify that
+                  </span>
+                  <strong>
+                    ${accomplishment_copy_name | h}
+                  </strong>
+                  <span>
+                    completed the course
+                  </span>
+            
+                  <span >
+                    ${accomplishment_copy_course_name}.
+                  </span>
+                </p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

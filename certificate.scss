@@ -1,0 +1,49 @@
+// Theme colors
+//
+$red: #d9534f;
+$usc_gold: #ffc803;
+$dark_cyan: #0f7087;
+$very_dark_magenta: #440641;
+$bright_turquoise: #0cebdc;
+$vivid_cyan: #23c9ff;
+$pale_violet: #a18fff;
+$vivid_cerise: #d9167e;
+$fern: #61ce70;
+$white: #ffffff;
+$blue: #022260;
+$primary: $vivid_cerise;
+$secondary: $dark_cyan;
+
+.bg-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: unset;
+}
+
+.bg-decoration__svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 134%;
+  height: auto;
+}
+
+.gradient-box {
+  background-image: linear-gradient(
+    to bottom right,
+    $dark_cyan,
+    $vivid_cerise,
+    $very_dark_magenta
+  );
+}
+
+.inner-box {
+  background: #fff;
+  padding: 2rem;
+}
